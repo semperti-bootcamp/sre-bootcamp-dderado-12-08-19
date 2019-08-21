@@ -1,0 +1,13 @@
+---
+- hosts: [webserver]
+  remote_user: root
+  become: yes
+  tasks:
+        - name: install mysql
+          yum: name=mysql state=present
+        
+        - name: install maven
+          yum: name=maven state=present
+
+        - name: install java-openjdk packages
+          yum: name=java-1.8.0-openjdk state=present
